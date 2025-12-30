@@ -1,0 +1,202 @@
+html, body, ul, li {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    color: #3b2f2f;
+    background-color: #f9f6f1;
+}
+
+.container {
+    padding: 20px 0;
+}
+
+.container h1 {
+    text-align: center;
+    font-family: 'Cinzel Decorative', serif;
+    color: #5b2e8a; /* antique title color */
+    text-shadow: 1px 1px 2px #d1c0f0;
+}
+
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.timeline ul li {
+    margin-bottom: 50px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.point {
+    min-width: 20px;
+    height: 2px;
+    background-color: #8B5E3C; /* antique line color */
+    position: relative;
+    left: 0;
+    z-index: 2;
+}
+
+/* Timeline content boxes */
+.timeline ul li .content {
+    width: 50%;
+    padding: 0 20px;
+    background-color: #fdf6e3;
+    border: 2px solid #d1bfa7;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Titles inside content boxes */
+.timeline ul li .content h3 {
+    margin: 0;
+    padding: 10px;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1em;
+    background-color: #bfa67a;
+    color: #3b2f2f;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+}
+
+/* Paragraph inside content boxes */
+.timeline ul li .content p {
+    margin: 0;
+    padding: 10px;
+    background-color: #fdf6e3;
+    /* text-align: justify; */
+    font-family: 'Georgia', serif;
+    line-height: 1.3rem;
+}
+
+/* Date labels container */
+.timeline ul li .date {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Odd items (content left, date right) */
+.timeline ul li:nth-child(odd) .date {
+    justify-content: flex-start; /* push date next to vertical line */
+    padding-left: 10px;
+}
+
+/* Even items (content right, date left) */
+.timeline ul li:nth-child(even) .date {
+    justify-content: flex-end; /* push date next to vertical line */
+    padding-right: 10px;
+}
+
+/* Date box */
+.timeline ul li .date h4 {
+    background-color: #e6d5b8;
+    color: #3b2f2f;
+    width: 100px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+
+/* Alternate content position */
+.timeline ul li:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Vertical timeline line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    left: 50%;
+    background-color: #8B5E3C; /* antique line color */
+    top: 0;
+}
+
+/* Preface boxes spanning width */
+.preface {
+    width: 85%;
+    margin: 60px auto;
+    padding: 25px;
+    background-color: #f4ecd1;
+    border: 2px solid #D2B48C;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.25);
+    /* text-align: justify; */
+    font-family: 'Georgia', serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    position: relative;
+    z-index: 5;
+}
+
+/* Preface title inside box */
+.preface h2 {
+    font-family: 'Cinzel Decorative', serif;
+    text-align: center;
+    color: #8B5E3C;
+    margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    .point { min-width: 15px; height: 2px; }
+    html, body { font-size: 15px; }
+}
+
+@media (max-width: 650px) {
+    .point { min-width: 12px; height: 2px; }
+    html, body { font-size: 14px; }
+}
+
+@media (max-width: 450px) {
+    html, body { font-size: 10px; }
+}
+
+/* Mobile readability improvements */
+@media (max-width: 768px) {
+    .preface {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        padding: 1.8rem 1.2rem;
+    }
+
+    .preface h2 {
+        font-size: 1.5rem;
+        line-height: 1.8;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Timeline content */
+    .timeline ul li .content {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        padding: 1.2rem;
+    }
+
+    .timeline ul li .content h3 {
+        font-size: 1.4rem;
+        line-height: 1.6;
+        margin-bottom: 0.8rem;
+        padding: 0.8rem;
+    }
+
+    .timeline ul li .content p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Dates */
+    .timeline ul li .date h4 {
+        font-size: 1.3rem;
+        line-height: 1.6;
+        padding: 0.6rem 0.8rem;
+    }
+}
