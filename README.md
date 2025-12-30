@@ -1,4 +1,4 @@
-# Timeline Web Page
+# Vertical Timeline Web Page
 
 This repository contains a static HTML/CSS implementation of a vertical, alternating timeline layout. It is designed to present chronological events in a clear, readable format, with support for long-form text and responsive behavior on mobile devices.
 
